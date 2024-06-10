@@ -1,0 +1,85 @@
+a =prompt("enter a numbers to rotate  array : ").split(" ").map(Number)
+b=+prompt("enter how many rotation ")
+c = a.slice(a.length-b)
+temp = a.length-b
+d = a.slice(0,temp)
+console.log(c.concat(d))
+
+
+arr = prompt("enter a number to count the palindromes in an array: ").split(" ").map(Number)
+count=0
+for( i of arr)
+{
+    if(i>=10)
+    {
+        r=0,s=0,t=i
+    while(i>0)
+    {
+        r = i%10
+        s=(s*10)+r
+        i=Math.floor(i/10)
+    }
+    if(t == s)
+    {
+        count++
+    }
+    
+    }
+    
+}
+console.log("palindrome count is : "+count)
+
+
+o/p:
+
+
+enter a numbers to rotate  array : 2 6 12 50
+enter how many rotation 2
+[ 12, 50, 2, 6 ]
+enter a number to count the palindromes in an array: 22 122 202 138 2
+palindrome count is : 2
+
+
+without using methods:
+
+
+
+a = [2,6,9,12,50,18]
+b=2
+c=[]
+count=0
+for(i=a.length-1;i>=0;i--)
+{
+    count++
+    c.push(a[i]) 
+    a.splice(i)
+    if(count == b)
+    {
+        break
+    }
+}
+console.log((c.reverse()).concat(a))
+
+
+/*practice work 
+
+a = [2,6,12,50]
+b=2
+sum = []
+sum2=[]
+for(i=0;i<b;i++)
+{
+    sum2.push(a[i])
+}
+for(i = b;i<a.length;i++)
+{
+    sum.push(a[i])
+}
+console.log(sum.concat(sum2))
+
+
+
+
+
+
+*/
